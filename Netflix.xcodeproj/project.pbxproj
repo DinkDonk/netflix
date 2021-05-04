@@ -14,7 +14,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A5E93956264195AE00CA7C1F /* netflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = netflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5E93956264195AE00CA7C1F /* Netflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E93959264195AE00CA7C1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5E9395B264195AE00CA7C1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A5E9395D264195B000CA7C1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 		A5E93957264195AE00CA7C1F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A5E93956264195AE00CA7C1F /* netflix.app */,
+				A5E93956264195AE00CA7C1F /* Netflix.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,9 +66,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A5E93955264195AE00CA7C1F /* netflix */ = {
+		A5E93955264195AE00CA7C1F /* Netflix */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A5E93966264195B000CA7C1F /* Build configuration list for PBXNativeTarget "netflix" */;
+			buildConfigurationList = A5E93966264195B000CA7C1F /* Build configuration list for PBXNativeTarget "Netflix" */;
 			buildPhases = (
 				A5E93952264195AE00CA7C1F /* Sources */,
 				A5E93953264195AE00CA7C1F /* Frameworks */,
@@ -78,9 +78,9 @@
 			);
 			dependencies = (
 			);
-			name = netflix;
+			name = Netflix;
 			productName = netflix;
-			productReference = A5E93956264195AE00CA7C1F /* netflix.app */;
+			productReference = A5E93956264195AE00CA7C1F /* Netflix.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -97,7 +97,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A5E93951264195AE00CA7C1F /* Build configuration list for PBXProject "netflix" */;
+			buildConfigurationList = A5E93951264195AE00CA7C1F /* Build configuration list for PBXProject "Netflix" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,7 +110,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A5E93955264195AE00CA7C1F /* netflix */,
+				A5E93955264195AE00CA7C1F /* Netflix */,
 			);
 		};
 /* End PBXProject section */
@@ -307,7 +307,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A5E93951264195AE00CA7C1F /* Build configuration list for PBXProject "netflix" */ = {
+		A5E93951264195AE00CA7C1F /* Build configuration list for PBXProject "Netflix" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5E93964264195B000CA7C1F /* Debug */,
@@ -316,7 +316,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A5E93966264195B000CA7C1F /* Build configuration list for PBXNativeTarget "netflix" */ = {
+		A5E93966264195B000CA7C1F /* Build configuration list for PBXNativeTarget "Netflix" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5E93967264195B000CA7C1F /* Debug */,
