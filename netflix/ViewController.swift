@@ -13,23 +13,34 @@ class WebView: WKWebView {
         return false
     }
     
-    override func resignFirstResponder() -> Bool {
-        return true
+    override var isOpaque: Bool {
+        return false
     }
 }
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, WKNavigationDelegate {
     private let webView: WKWebView = {
         let preferences = WKWebpagePreferences()
         preferences.allowsContentJavaScript = true
         let configuration = WKWebViewConfiguration()
         configuration.defaultWebpagePreferences = preferences
         let webView = WebView(frame: .zero, configuration: configuration)
+        
         return webView
     }()
     
+    func webView(_ webView: WKWebView, didFinish: WKNavigation!) {
+        webView.isHidden = false
+    }
+
     override func becomeFirstResponder() -> Bool {
         return true
+    }
+    
+    override func keyDown(with event: NSEvent) {
+        if (event.keyCode == 49) {
+            webView.keyDown(with: event)
+        }
     }
 
     override func viewDidLoad() {
@@ -38,7 +49,14 @@ class ViewController: NSViewController {
         view.addSubview(webView)
         guard let url = URL(string: "https://netflix.com/") else {return}
         let request = URLRequest(url: url)
+        webView.isHidden = true
+        webView.navigationDelegate = self
         webView.load(request)
+        
+        NSEvent.addLocalMonitorForEvents(matching: .keyDown) {
+            self.keyDown(with: $0)
+            return $0
+        }
     }
     
     override func viewDidLayout() {
@@ -48,7 +66,7 @@ class ViewController: NSViewController {
 
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+            // Update the view, if already loaded.
         }
     }
 }
