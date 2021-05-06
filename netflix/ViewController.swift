@@ -38,9 +38,11 @@ class ViewController: NSViewController, WKNavigationDelegate {
     }
     
     override func keyDown(with event: NSEvent) {
-        if (event.keyCode == 49) {
-            webView.keyDown(with: event)
+        if (event.modifierFlags.contains(.command) && event.keyCode == 3) {
+            return
         }
+        
+        webView.keyDown(with: event)
     }
 
     override func viewDidLoad() {
