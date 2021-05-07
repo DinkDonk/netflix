@@ -33,6 +33,12 @@ class ViewController: NSViewController, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish: WKNavigation!) {
         webView.isHidden = false
+        
+        NSAnimationContext.runAnimationGroup({ context in
+            context.allowsImplicitAnimation = true
+            context.duration = 1
+            webView.animator().alphaValue = 1
+        })
     }
 
     override func viewDidLoad() {
@@ -42,6 +48,7 @@ class ViewController: NSViewController, WKNavigationDelegate {
         guard let url = URL(string: "https://netflix.com/") else {return}
         let request = URLRequest(url: url)
         webView.isHidden = true
+        webView.alphaValue = 0
         webView.navigationDelegate = self
         webView.load(request)
     }
