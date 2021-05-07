@@ -9,12 +9,14 @@ import Cocoa
 import WebKit
 
 class WebView: WKWebView {
-    override func becomeFirstResponder() -> Bool {
+    override var isOpaque: Bool {
         return false
     }
     
-    override var isOpaque: Bool {
-        return false
+    override func interpretKeyEvents(_ eventArray: [NSEvent]) {
+        if (eventArray[0].modifierFlags.contains(.command) && eventArray[0].keyCode == 3) {
+            window?.toggleFullScreen(self)
+        }
     }
 }
 
@@ -33,18 +35,6 @@ class ViewController: NSViewController, WKNavigationDelegate {
         webView.isHidden = false
     }
 
-    override func becomeFirstResponder() -> Bool {
-        return true
-    }
-    
-    override func keyDown(with event: NSEvent) {
-        if (event.modifierFlags.contains(.command) && event.keyCode == 3) {
-            return
-        }
-        
-        webView.keyDown(with: event)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,11 +44,6 @@ class ViewController: NSViewController, WKNavigationDelegate {
         webView.isHidden = true
         webView.navigationDelegate = self
         webView.load(request)
-        
-        NSEvent.addLocalMonitorForEvents(matching: .keyDown) {
-            self.keyDown(with: $0)
-            return $0
-        }
     }
     
     override func viewDidLayout() {
